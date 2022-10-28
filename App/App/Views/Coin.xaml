@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:CoinViewModel"
+             x:Class="App.Views.Coin"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:CoinViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Image Source="{Binding CoinUri}" 
+               Grid.Row="1">
+        </Image>
+
+        <StackLayout Grid.Row="2">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="ButtonStyle" TargetType="Button">
+                        <Setter Property="CornerRadius" Value="15" />
+                        <Setter Property="FontSize" Value="25" />
+                        <Setter Property="BorderColor" Value="White" />
+                        <Setter Property="BorderWidth" Value="1" />
+                        <Setter Property="TextColor" Value="White" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Button Text="Münze werfen"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding FlipCoinCommand}">
+            </Button>
+        </StackLayout >
+    </Grid>
+</ContentPage>

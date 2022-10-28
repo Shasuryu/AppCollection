@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:App.ViewModels" 
+             x:DataType="viewmodels:RNGViewModel"
+             x:Class="App.Views.RandomNumber"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewmodels:RNGViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Entry WidthRequest="250"  
+                   HeightRequest="50"
+                   FontSize="25"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Background="Black"
+                   Placeholder="kleinere Zahl"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding Lower}"/>
+
+        <Entry Grid.Row="1"
+                   WidthRequest="250"  
+                   HeightRequest="50"
+                   FontSize="25"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Background="Black"
+                   Placeholder="größere Zahl"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding Upper}"/>
+
+        <Label Grid.Row="2" 
+               TextColor="White"
+               FontSize="40"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Text="{Binding Number}"/>
+
+        <StackLayout Grid.Row="3">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="ButtonStyle" TargetType="Button">
+                        <Setter Property="CornerRadius" Value="15" />
+                        <Setter Property="FontSize" Value="25" />
+                        <Setter Property="BorderColor" Value="White" />
+                        <Setter Property="BorderWidth" Value="1" />
+                        <Setter Property="TextColor" Value="White" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Button Text="Zufällige Zahl"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding GenerateRandomCommand}">
+            </Button>
+            <Button Text="0 - 10"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding GenerateRandomZeroToTenCommand}">
+            </Button>
+            <Button Text="0 - 100"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding GenerateRandomZeroToHundretCommand}">
+            </Button>
+        </StackLayout >
+    </Grid>
+</ContentPage>

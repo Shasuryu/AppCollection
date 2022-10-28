@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:App.ViewModels"
+             xmlns:models="clr-namespace:App.Models;assembly=App"
+             x:DataType="viewmodels:TicTacToeGamePageViewModel"
+             x:Class="App.Views.TicTacToeGamePage"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewmodels:TicTacToeGamePageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label TextColor="White"
+               Text="TicTacToe"
+               FontSize="80"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               BackgroundColor="Black"/>
+        <CollectionView Grid.Row="1" 
+                        ItemsSource="{Binding Buttons}" 
+                        BackgroundColor="Black"
+                        HorizontalOptions="Center">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <StackLayout>
+                            <StackLayout.Resources>
+                                <ResourceDictionary>
+                                    <Style x:Key="ButtonStyle" TargetType="ImageButton">
+                                        <Setter Property="CornerRadius" Value="0" />
+                                        <Setter Property="BorderColor" Value="White" />
+                                        <Setter Property="BorderWidth" Value="7" />
+                                        <Setter Property="Command" Value="{Binding BindingContext.ButtonClickCommand, Source={RelativeSource AncestorType={x:Type Page}}}"></Setter>
+                                        <Setter Property="CommandParameter" Value="{Binding Index}"/>
+                                    </Style>
+                                </ResourceDictionary>
+                            </StackLayout.Resources>
+                            <ImageButton Source="{Binding ButtonUri, Source={RelativeSource AncestorType={x:Type models:TicTacToeButton}}, Mode=TwoWay}"
+                                         HeightRequest="120" 
+                                         WidthRequest="10"
+                                         Margin="5"
+                                         Style="{StaticResource ButtonStyle}"/>
+                        </StackLayout >
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Span="3" 
+                                 Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:PythagorasViewModel"
+             x:Class="App.Views.Pythagoras"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:PythagorasViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout>
+            <Entry WidthRequest="150"  
+                   HeightRequest="50"
+                   FontSize="15"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Background="Black"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding SideA}"
+                   Placeholder="Seite A"/>
+            <Entry WidthRequest="150"  
+                   HeightRequest="50"
+                   FontSize="15"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Background="Black"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding SideB}"
+                   Placeholder="Seite B"/>
+            <Entry WidthRequest="150"  
+                   HeightRequest="50"
+                   FontSize="15"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   Background="Black"
+                   TextColor="White"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   Text="{Binding SideC}"
+                   Placeholder="Seite C"/>
+            <Picker
+                HeightRequest="70"
+                HorizontalTextAlignment="Center"
+                Title="Der rechte Winkel ist:"
+                VerticalOptions="Center"
+                SelectedItem="{Binding Winkel}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alpha</x:String>
+                        <x:String>Beta</x:String>
+                        <x:String>Gamma</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Image Source="Dreieck.png"
+                   BackgroundColor="DimGray"/>
+            <Label Text="  Referenzbild für Bezeichnungen"/>
+            <Button Text="Ausrechnen"
+                    CornerRadius="20"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    Command="{Binding CalculateCommand}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

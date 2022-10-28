@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:App.Views"
+       Title="App"
+       x:Class="App.AppShell"
+       BackgroundColor="Black"
+       FlyoutBackgroundColor="White"
+       ForegroundColor="White"
+       TitleColor="White"
+       TabBarForegroundColor="White">
+
+    <FlyoutItem Title="Fade" Icon="icon_feed.png">
+        <ShellContent Route="PngFade" 
+                      ContentTemplate="{DataTemplate local:PngFade}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Hintergrund" Icon="icon_feed.png">
+        <ShellContent Route="Color" 
+                      ContentTemplate="{DataTemplate local:Color}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Münzwurf" Icon="icon_feed.png">
+        <ShellContent Route="Coin" 
+                      ContentTemplate="{DataTemplate local:Coin}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Rechner" Icon="icon_feed.png">
+        <ShellContent Route="CalculatorMenu" 
+                      ContentTemplate="{DataTemplate local:CalculatorMenu}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Stoppuhr" Icon="icon_feed.png">
+        <ShellContent Route="Timer" 
+                      ContentTemplate="{DataTemplate local:Timer}" />
+    </FlyoutItem>
+    <FlyoutItem Title="TicTacToe" Icon="icon_feed.png">
+        <ShellContent Route="TicTacToe" 
+                      ContentTemplate="{DataTemplate local:TicTacToeGamePage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Useless Machine" Icon="icon_about.png">
+        <ShellContent Route="UselessMachine" 
+                      ContentTemplate="{DataTemplate local:UselessMachine}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Zähler" Icon="icon_feed.png">
+        <ShellContent Route="Counter" 
+                      ContentTemplate="{DataTemplate local:Counter}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Zufälliger Buchstabe" Icon="icon_feed.png">
+        <ShellContent Route="RandomLetter" 
+                      ContentTemplate="{DataTemplate local:RandomLetter}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Zufällige Zahl" Icon="icon_about.png">
+        <ShellContent Route="RandomNumber" 
+                      ContentTemplate="{DataTemplate local:RandomNumber}" />
+    </FlyoutItem>
+
+    <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    </MenuItem>-->
+
+    <!--<TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>-->
+</Shell>

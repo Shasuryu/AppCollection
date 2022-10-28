@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:ValueConverterViewModel"
+             x:Class="App.Views.ValueConverter"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:ValueConverterViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding IntegerValue}"
+                       Placeholder="Dezimal"/>
+            </Grid>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding HexaValue}"
+                       Placeholder="Hexadezimal"/>
+            </Grid>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding BinaryValue}"
+                       Placeholder="Binär"/>
+            </Grid>
+            <Grid>
+                <Label
+                    WidthRequest="200"  
+                    HeightRequest="50"/>
+            </Grid>
+            <Grid>
+                <Button 
+                    WidthRequest="200"  
+                    HeightRequest="50"
+                    Text="Ausrechnen"
+                    FontSize="25"
+                    CornerRadius="20"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    Command="{Binding CalculateCommand}"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

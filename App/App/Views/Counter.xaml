@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:CounterViewModel"
+             x:Class="App.Views.Counter"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewModels:CounterViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="300" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Label WidthRequest="200"  
+               HeightRequest="80"
+               Grid.Row="1"
+               FontSize="60"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Text="{Binding Counter}">
+        </Label>
+
+        <Button WidthRequest="120"  
+                HeightRequest="50"
+                Grid.Row="3"
+                Text="+"
+                FontSize="25"
+                Background="Black"
+                BorderColor="White"
+                HorizontalOptions="Start"
+                CornerRadius="30"
+                BorderWidth="1"
+                Command="{Binding IncreaseCounterCommand}"/>
+
+        <Button WidthRequest="120"  
+                HeightRequest="50"
+                Grid.Row="3"
+                Text="Reset"
+                FontSize="25"
+                Background="Black"
+                BorderColor="White"
+                HorizontalOptions="Center"
+                CornerRadius="30"
+                BorderWidth="1"
+                Command="{Binding ResetCounterCommand}"/>
+
+        <Button WidthRequest="120"  
+                HeightRequest="50"
+                Grid.Row="3"
+                Text="-"
+                FontSize="25"
+                Background="Black"
+                BorderColor="White"
+                HorizontalOptions="End"
+                CornerRadius="30"
+                BorderWidth="1"
+                Command="{Binding DecreaseCounterCommand}"/>
+    </Grid>
+</ContentPage>

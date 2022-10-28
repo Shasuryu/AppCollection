@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             x:DataType="viewModels:PngFadeViewModel"
+             x:Class="App.Views.PngFade"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewModels:PngFadeViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="500" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout VerticalOptions="Center" 
+                    WidthRequest="100">
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="A:"/>
+                <Slider Maximum="255"
+                        x:Name="Alpha1"
+                        Value="{Binding Alpha1}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="R:"/>
+                <Slider Maximum="255"
+                        x:Name="Red1"
+                        Value="{Binding Red1}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="G:"/>
+                <Slider Maximum="255"
+                        x:Name="Green1"
+                        Value="{Binding Green1}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="B:"/>
+                <Slider Maximum="255"
+                        x:Name="Blue1"
+                        Value="{Binding Blue1}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+        </StackLayout>
+        <StackLayout VerticalOptions="Center" 
+                     WidthRequest="100"
+                     Grid.Row="0"
+                     Grid.Column="1">
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="A:"/>
+                <Slider Maximum="255"
+                        x:Name="Alpha2"
+                        Value="{Binding Alpha2}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="R:"/>
+                <Slider Maximum="255"
+                        x:Name="Red2"
+                        Value="{Binding Red2}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="G:"/>
+                <Slider Maximum="255"
+                        x:Name="Green2"
+                        Value="{Binding Green2}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+            <views:DockLayout>
+                <Label views:DockLayout.Dock="Left" 
+                       Text="B:"/>
+                <Slider Maximum="255"
+                        x:Name="Blue2"
+                        Value="{Binding Blue2}"
+                        ThumbColor="White"/>
+            </views:DockLayout>
+        </StackLayout>
+
+        <Image WidthRequest="200"
+               HeightRequest="200"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               Source="{Binding Image}"
+               Aspect="Fill">
+        </Image>
+    </Grid>
+</ContentPage>

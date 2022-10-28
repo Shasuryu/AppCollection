@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:CalculatorMenuViewModel"
+             x:Class="App.Views.CalculatorMenu"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:CalculatorMenuViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="500" />
+        </Grid.RowDefinitions>
+
+        <Label WidthRequest="250"  
+               HeightRequest="100"
+               Grid.Row="0"
+               Text="Rechner"
+               FontSize="40"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"/>
+
+        <ScrollView Grid.Column="0"
+                      Grid.Row="1">
+            <StackLayout>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="+ - * /"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToCalculatorCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Umrechner"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToConverterCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Fläche"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToShapeCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Körper"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToBodyCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Pythagoras"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToPythagorasCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Prozent"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToPercentCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Orientation"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToOrientationCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Farm"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToFarmCalculatorCommand}"/>
+                </Grid>
+                <Grid>
+                    <Button WidthRequest="250"  
+                            HeightRequest="50"
+                            Text="Grind"
+                            FontSize="25"
+                            Background="Black"
+                            BorderColor="White"
+                            CornerRadius="25"
+                            Command="{Binding GoToGrindCalculatorCommand}"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

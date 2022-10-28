@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:FarmCalculatorViewModel"
+             x:Class="App.Views.FarmCalculator"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:FarmCalculatorViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Entry WidthRequest="350"  
+                  HeightRequest="50"
+                  FontSize="25"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center" 
+                  x:Name="AmountNeeded" 
+                  Grid.Row="0"
+                  Background="Black"
+                  TextColor="White"
+                  VerticalTextAlignment="Center"
+                  HorizontalTextAlignment="Center"
+                  Text="{Binding AmountNeeded}"
+                  Placeholder="Anzahl benötigt"/>
+
+        <Entry WidthRequest="350"  
+                  HeightRequest="50"
+                  FontSize="25"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center" 
+                  x:Name="AmountGot" 
+                  Grid.Row="1"
+                  Background="Black"
+                  TextColor="White"
+                  VerticalTextAlignment="Center"
+                  HorizontalTextAlignment="Center"
+                  Text="{Binding AmountGot}"
+                  Placeholder="Anzahl im Besitz"/>
+
+        <Entry WidthRequest="350"  
+                  HeightRequest="50"
+                  FontSize="25"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center" 
+                  x:Name="AmountGainedInXMinutes" 
+                  Grid.Row="2"
+                  Background="Black"
+                  TextColor="White"
+                  VerticalTextAlignment="Center"
+                  HorizontalTextAlignment="Center"
+                  Text="{Binding AmountGainedInXMinutes}"
+                  Placeholder="Anzahl gefarmt in X Minuten"/>
+
+        <Entry WidthRequest="350"  
+                  HeightRequest="50"
+                  FontSize="25"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center" 
+                  x:Name="XMinutesPassed" 
+                  Grid.Row="3"
+                  Background="Black"
+                  TextColor="White"
+                  VerticalTextAlignment="Center"
+                  HorizontalTextAlignment="Center"
+                  Text="{Binding XMinutesPassed}"
+                  Placeholder="Minuten um X zu farmen"/>
+
+        <StackLayout Grid.Row="4"
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center">
+            <Label HeightRequest="280"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="geschätzte Zeit:">
+            </Label>
+            <Label HeightRequest="280"
+                   FontSize="25"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="{Binding Hours}">
+            </Label>
+            <Label HeightRequest="280"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="Stunden">
+            </Label>
+            <Label HeightRequest="280"
+                   FontSize="25"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="{Binding Minutes}">
+            </Label>
+            <Label HeightRequest="280"
+                   FontSize="20"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" 
+                   Text="Minuten">
+            </Label>
+        </StackLayout>
+
+        <Button WidthRequest="250"  
+                HeightRequest="50"
+                Grid.Row="5"
+                Text="Berechnen"
+                FontSize="25"
+                Background="Black"
+                BorderColor="White"
+                CornerRadius="25"
+                Command="{Binding CalculateFarmTimeCommand}"/>
+    </Grid>
+</ContentPage>

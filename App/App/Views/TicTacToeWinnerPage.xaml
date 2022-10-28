@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:TicTacToeWinnerPageViewModel"
+             x:Class="App.Views.TicTacToeWinnerPage"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewModels:TicTacToeWinnerPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False"
+                            IconOverride="Black.png"/>
+    </Shell.BackButtonBehavior>
+    
+    <Image Source="{Binding WinnerUri}">
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding NewGameCommand}"></TapGestureRecognizer>
+        </Image.GestureRecognizers>
+    </Image>
+</ContentPage>

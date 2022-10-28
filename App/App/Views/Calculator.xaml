@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             x:DataType="viewModels:CalculatorViewModel"
+             x:Class="App.Views.Calculator"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:CalculatorViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.ColumnSpan="4"
+            Text="{Binding Display}"
+            FontSize="30"/>
+        <Button 
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="C"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding ClearCommand}"/>
+        <Button 
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="("
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding OpenBracketCommand}"/>
+        <Button 
+            Grid.Row="1"
+            Grid.Column="2"
+            Text=")"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding CloseBracketCommand}"/>
+        <Button 
+            Grid.Row="1"
+            Grid.Column="3"
+            Text="+"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding PlusCommand}"/>
+
+        <Button 
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="7"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding SevenCommand}"/>
+        <Button 
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="8"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding EightCommand}"/>
+        <Button 
+            Grid.Row="2"
+            Grid.Column="2"
+            Text="9"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding NineCommand}"/>
+        <Button 
+            Grid.Row="2"
+            Grid.Column="3"
+            Text="-"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding MinusCommand}"/>
+
+        <Button 
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="4"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding FourCommand}"/>
+        <Button 
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="5"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding FiveCommand}"/>
+        <Button 
+            Grid.Row="3"
+            Grid.Column="2"
+            Text="6"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding SixCommand}"/>
+        <Button 
+            Grid.Row="3"
+            Grid.Column="3"
+            Text="*"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding MultiplyCommand}"/>
+
+        <Button 
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="1"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding OneCommand}"/>
+        <Button 
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="2"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding TwoCommand}"/>
+        <Button 
+            Grid.Row="4"
+            Grid.Column="2"
+            Text="3"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding ThreeCommand}"/>
+        <Button 
+            Grid.Row="4"
+            Grid.Column="3"
+            Text="/"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding DivideCommand}"/>
+
+        <Button 
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="←"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding BackCommand}"/>
+        <Button 
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="0"
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding ZeroCommand}"/>
+        <Button 
+            Grid.Row="5"
+            Grid.Column="2"
+            Text="."
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding PointCommand}"/>
+        <Button 
+            Grid.Row="5"
+            Grid.Column="3"
+            Text="="
+            BorderColor="White"
+            BorderWidth="2"
+            CornerRadius="20"
+            Command="{Binding CalculateCommand}"/>
+    </Grid>
+</ContentPage>

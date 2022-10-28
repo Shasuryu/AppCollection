@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             x:DataType="viewModels:GrindViewModel"
+             x:Class="App.Views.Grind"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:GrindViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding MaxValue}"
+                       Placeholder="Anzahl benötigt"/>
+            </Grid>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding MinValue}"
+                       Placeholder="Anzahl aktuell"/>
+            </Grid>
+            <Grid>
+                <Entry WidthRequest="390"  
+                       HeightRequest="50"
+                       FontSize="15"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center"
+                       Background="Black"
+                       TextColor="White"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding Time}"
+                       Placeholder="Zeit über"/>
+            </Grid>
+            <views:DockLayout>
+                <Label 
+                    HeightRequest="280"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="Center" 
+                    Text="Du brauchst noch "/>
+                <Label 
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="Center" 
+                    Text="{Binding Value}"/>
+                <Label 
+                    FontSize="15"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="Center" 
+                    Text=" Einheiten pro Zeiteinheit"/>
+            </views:DockLayout>
+            <Grid>
+                <Label
+                    WidthRequest="200"  
+                    HeightRequest="50"/>
+            </Grid>
+            <Grid>
+                <Button 
+                    WidthRequest="200"  
+                    HeightRequest="50"
+                    Text="Ausrechnen"
+                    FontSize="25"
+                    CornerRadius="20"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    Command="{Binding CalculateCommand}"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

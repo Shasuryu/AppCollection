@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App.ViewModels;assembly=App"
+             xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             x:DataType="viewModels:BodyCalculatorViewModel"
+             x:Class="App.Views.BodyCalculator"
+             BackgroundColor="Black">
+
+    <ContentPage.BindingContext>
+        <viewModels:BodyCalculatorViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label HeightRequest="280"
+               Grid.Row="0"
+               FontSize="50"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" 
+               Text="Körperrechner">
+        </Label>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                                  HeightRequest="50"
+                                  FontSize="15"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center" 
+                                  x:Name="CubeSide" 
+                                  Background="Black"
+                                  TextColor="White"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Center"
+                                  Text="{Binding CubeSide}"
+                                  Placeholder="Würfel: Seite"/>
+                    </Grid>
+                    <Label WidthRequest="150"  
+                                  HeightRequest="50"/>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label WidthRequest="150"  
+                                  HeightRequest="50"/>
+                    <Grid>
+                        <Entry  WidthRequest="150"  
+                                  HeightRequest="50"
+                                  FontSize="15"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center" 
+                                  x:Name="CubeVolume" 
+                                  Background="Black"
+                                  TextColor="White"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Center"
+                                  Text="{Binding CubeVolume}"
+                                  Placeholder="Würfel: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculateCubeCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CuboidSideA" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CuboidSideA}"
+                              Placeholder="Quader: Seite a"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CuboidSideB" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CuboidSideB}"
+                              Placeholder="Quader: Seite b"/>
+                    </Grid>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CuboidSideC" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CuboidSideC}"
+                              Placeholder="Quader: Seite c"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CuboidVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CuboidVolume}"
+                              Placeholder="Quader: Volumen"/>
+
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculateCuboidCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="PyramidSideA" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding PyramidSideA}"
+                              Placeholder="Pyramide: Seite"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="PyramidHeight" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding PyramidHeight}"
+                              Placeholder="Pyramide: Höhe"/>
+                    </Grid>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label WidthRequest="150"  
+                            HeightRequest="50"/>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="PyramidVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding PyramidVolume}"
+                              Placeholder="Pyramide: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculatePyramidCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="PrismaBase" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding PrismaBase}"
+                              Placeholder="Prisma: Grundfläche"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                                  HeightRequest="50"
+                                  FontSize="15"
+                                  VerticalOptions="Center" 
+                                  HorizontalOptions="Center" 
+                                  x:Name="PrismaHeight" 
+                                  Background="Black"
+                                  TextColor="White"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Center"
+                                  Text="{Binding PrismaHeight}"
+                                  Placeholder="Prisma: Höhe"/>
+                    </Grid>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label  WidthRequest="150"  
+                            HeightRequest="50"/>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="PrismaVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding PrismaVolume}"
+                              Placeholder="Prisma: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculatePrismaCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CylinderRadius" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CylinderRadius}"
+                              Placeholder="Zylinder: Radius"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CylinderHeight" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CylinderHeight}"
+                              Placeholder="Zylinder: Höhe"/>
+                    </Grid>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label WidthRequest="150"  
+                            HeightRequest="50"/>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="CylinderVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding CylinderVolume}"
+                              Placeholder="Zylinder: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculateCylinderCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="ConeRadius" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding ConeRadius}"
+                              Placeholder="Kegel: Radius"/>
+                    </Grid>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="ConeHeight" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding ConeHeight}"
+                              Placeholder="Kegel: Höhe"/>
+                    </Grid>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label WidthRequest="150"  
+                            HeightRequest="50"/>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="ConeVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding ConeVolume}"
+                              Placeholder="Kegel: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculateConeCommand}"/>
+                <Label WidthRequest="150"  
+                       HeightRequest="50"/>
+                <views:DockLayout>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="SphereHeight" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding SphereHeight}"
+                              Placeholder="Kugel: Radius"/>
+                    </Grid>
+                    <Label WidthRequest="150"  
+                            HeightRequest="50"/>
+                </views:DockLayout>
+                <views:DockLayout>
+                    <Label WidthRequest="150"  
+                            HeightRequest="50"/>
+                    <Grid>
+                        <Entry WidthRequest="150"  
+                              HeightRequest="50"
+                              FontSize="15"
+                              VerticalOptions="Center" 
+                              HorizontalOptions="Center" 
+                              x:Name="SphereVolume" 
+                              Background="Black"
+                              TextColor="White"
+                              VerticalTextAlignment="Center"
+                              HorizontalTextAlignment="Center"
+                              Text="{Binding SphereVolume}"
+                              Placeholder="Kugel: Volumen"/>
+                    </Grid>
+                </views:DockLayout>
+                <Button Text="Ausrechnen"
+                        CornerRadius="20"
+                        BorderColor="White"
+                        BorderWidth="2"
+                        Command="{Binding CalculateSphereCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
